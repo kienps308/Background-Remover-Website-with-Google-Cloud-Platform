@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+    
+{% block content %}
+    <h1>Upload a Photo</h1>
+    <form method="POST" enctype="multipart/form-data" action="/upload">
+    <input type="file" name="file" accept=".jpg, .jpeg, .png, .gif">
+    <input type="submit" value="Upload">
+    </form>
+
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+    
+{% block content %}
+<h1>Images</h1>
+
+<!--  Display the Term and Year here --->
+<h3>Your Gallery</h3>
+
+<div>
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th scope="col">Image ID</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Created date</th>
+            <th scope="col">Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <!-- Construct the rest of images here -->
+        {% for data in imageData %}
+        <tr>
+            <td scope='row'>{{ data["imageID"] }}</td>
+            <td>{{ data["title"] }}</td>
+            <td>{{ data["description"] }}</td>
+            <td>{{ data["Created date"] }}</td>
+            <td>
+                <form action="{{ url_for('delete') }}" method="POST">
+                    <input type="hidden" name="imageID" value="{{ data['imageID'] }}">
+                    <input type="hidden" name="title" value="{{ data['title'] }}">
+                    <input type="hidden" name="term" value="{{ data['term'] }}">
+                <button>Delete</button>
+            </form>
+            </td>
+        </tr>
+        {% endfor %}
+        
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}
