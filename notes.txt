@@ -1,0 +1,10 @@
+Things to do:
+Download git
+Clone the repo to your local machine
+Install Dependencies
+Run "flask run"
+
+Rules:
+- git pull main branch
+- main: + kienps: some task ---git pull---commit to main---delete branch---
+        + diba: some task ---commit to main---delete branch---
