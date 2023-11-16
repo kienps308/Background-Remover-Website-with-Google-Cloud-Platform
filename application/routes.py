@@ -6,7 +6,7 @@ from flask import Response, json, redirect, render_template, request
 imageData = [{"imageID":"1111","title":"something.jpg","description":"Something something","Created date":"30/08/2000"}]
 
 # Define a route and its corresponding function
-@app.route('/')
+@app.route('/')))
 @app.route('/index')
 @app.route('/home')
 def index():
