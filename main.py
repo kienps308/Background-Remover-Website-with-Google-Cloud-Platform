@@ -1,1 +1,6 @@
-from application import app # Import the app variable from the __init__.py file
+from application import create_app
+
+app= create_app()
+
+if __name__ == '__main__':
+	app.run(debug=True, host='0.0.0.0', port = 5000)
