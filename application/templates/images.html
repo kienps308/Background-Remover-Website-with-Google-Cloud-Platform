@@ -27,7 +27,7 @@
             <td>{{ data["description"] }}</td>
             <td>{{ data["Created date"] }}</td>
             <td>
-                <form action="{{ url_for('delete') }}" method="POST">
+                <form action="{{ url_for('views.delete') }}" method="POST">
                     <input type="hidden" name="imageID" value="{{ data['imageID'] }}">
                     <input type="hidden" name="title" value="{{ data['title'] }}">
                     <input type="hidden" name="term" value="{{ data['term'] }}">

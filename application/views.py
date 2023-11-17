@@ -1,63 +1,31 @@
 import os
+from flask import Blueprint, redirect, render_template, request
+from flask_login import login_required,current_user
 from application import app
-from flask import Response, json, redirect, render_template, request, session
-from sqlalchemy import create_engine, ForeignKey, Column, String, Integer, CHAR
 
+views = Blueprint('views', __name__)
 imageData = [{"imageID":"1111","title":"something.jpg","description":"Something something","Created date":"30/08/2000"}]
 
-# Define a route and its corresponding function
-@app.route('/')
-@app.route('/index')
-@app.route('/home')
+@views.route('/')
+@views.route('/index')
+@views.route('/home')
 def index():
-    """
-    A function that serves as the route handler for the homepage.
+    return render_template('index.html')
 
-    Returns:
-        The rendered index.html template with the index variable set to True.
-    """
-    return render_template('index.html', index = True)
 
-@app.route('/login', methods=['GET','POST'] )
-def login():
-    """
-    A decorator that specifies the route '/login' for the login function.
-
-    Returns:
-        The rendered template 'login.html' with the login variable set to True.
-    """
-    if request.method == 'POST':
-        user = request.form['username']
-        session['username'] = user
-        if request.form['username'] == 'admin' and request.form['password'] == 'admin':
-            return redirect('/images')
-    else: 
-        return render_template('login.html', login = True )
-
-@app.route('/images')
+@views.route('/images')
+@login_required
 def images():               
     """
     Render the "images.html" template with the provided `imageData` and `images` variables.
     
     :return: The rendered HTML page.
     """
-    return render_template("images.html", imageData=imageData, images = True )
+    return render_template("images.html", imageData=imageData, images = True, name=current_user.name)
 
-@app.route('/register')
-def register():
-    """
-    A description of the register function.
 
-    This function is the route handler for the '/register' URL. It renders the 'register.html'
-    template and passes the value True to the 'register' variable in the template context.
 
-    Returns:
-        The rendered 'register.html' template.
-
-    """
-    return render_template('register.html', register = True )
-
-@app.route('/delete', methods=['GET','POST']) 
+@views.route('/delete', methods=['GET','POST']) 
 def delete():
     """
     Delete function for handling the '/delete' route.
@@ -92,7 +60,8 @@ def allowed_file(filename):
     allowed_extensions = {'jpg', 'jpeg', 'png', 'gif'}
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in allowed_extensions
 
-@app.route('/upload', methods=['GET'])
+@views.route('/upload', methods=['GET'])
+@login_required
 def upload():
     """
     Renders the 'upload.html' template with the 'upload' variable set to True.
@@ -101,7 +70,8 @@ def upload():
     """
     return render_template('upload.html', upload = True)
 
-@app.route('/upload', methods=['POST'])
+@views.route('/upload', methods=['POST'])
+@login_required
 def upload_file():
     """
     Uploads a file to the server.

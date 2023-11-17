@@ -6,7 +6,7 @@
             {% if login %}
             <h3>Let's get started.</h3>
             {% else %}
-            <p>Already registered? <a href="{{ url_for('login') }}">Login</a>, or <a href="{{ url_for('register') }}">Register</a></p>
+            <p>Already registered? <a href="{{ url_for('auth.login') }}">Login</a>, or <a href="{{ url_for('auth.register') }}">Register</a></p>
             {% endif %}
             </div>
     </div>
