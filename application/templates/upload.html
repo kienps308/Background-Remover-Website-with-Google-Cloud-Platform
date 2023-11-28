@@ -7,4 +7,9 @@
     <input type="submit" value="Upload">
     </form>
 
+    {% if image_url %}
+    <h2>Result:</h2>
+    <img src= "{{ url_for('static', filename='/images/'+image_url) }}" width="50%" alt="Result">
+    {% endif %}
+
 {% endblock %}
