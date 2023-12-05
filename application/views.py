@@ -21,7 +21,7 @@ def images():
     
     :return: The rendered HTML page.
     """
-    return render_template("images.html", imageData=imageData, images = True, name=current_user.name)
+    return render_template("images.html", imageData=imageData, images = True, name=current_user.username)
 
 
 

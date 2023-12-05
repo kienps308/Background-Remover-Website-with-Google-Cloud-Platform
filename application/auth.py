@@ -38,7 +38,7 @@ def register():
 def register_post():
     # code to validate and add user to database goes here
     email = request.form.get('email')
-    name = request.form.get('name')
+    username = request.form.get('username')
     password = request.form.get('password')
 
     user = User.query.filter_by(email=email).first() # if this returns a user, then the email already exists in database
@@ -48,7 +48,7 @@ def register_post():
         return redirect(url_for('auth.login'))
 
     # create a new user with the form data. Hash the password so the plaintext version isn't saved.
-    new_user = User(email=email, name=name, password=generate_password_hash(password))
+    new_user = User(email=email, username=username, password=generate_password_hash(password))
 
     # add the new user to the database
     db.session.add(new_user)

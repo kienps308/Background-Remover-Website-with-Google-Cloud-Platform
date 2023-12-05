@@ -1,14 +1,50 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
+from google.cloud.sql.connector import Connector, IPTypes
+import secrets
+
+secret = secrets.token_urlsafe(32)
 
 # init SQLAlchemy so we can use it later in our models
-db = SQLAlchemy()
+# initialize Python Connector object
+connector = Connector()
+
+# initialize parameters
+project_id='utopian-splicer-400911'
+region = 'europe-west2'
+instance_name = 'kienps'
+
+INSTANCE_CONNECTION_NAME = f"{project_id}:{region}:{instance_name}" # i.e demo-project:us-central1:demo-instance
+print(f"Your instance connection name is: {INSTANCE_CONNECTION_NAME}")
+DB_USER = "user"
+DB_PASS = "test"
+DB_NAME = "cloud_project_4"
+
+# Python Connector database connection function
+# function to return the database connection object
+def getconn():
+    conn = connector.connect(
+        INSTANCE_CONNECTION_NAME,
+        "pymysql",
+        user=DB_USER,
+        password=DB_PASS,
+        db=DB_NAME
+    )
+    return conn
+
 app = Flask(__name__)
 
+# initialize the app with the extension
+db = SQLAlchemy()
+
 def create_app():
-    app.config['SECRET_KEY'] = 'secret-key-goes-here'
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
+    # configure Flask-SQLAlchemy to use Python Connector
+    app.secret_key = secret
+    app.config['SQLALCHEMY_DATABASE_URI'] = "mysql+pymysql://"
+    app.config['SQLALCHEMY_ENGINE_OPTIONS'] = {
+        "creator": getconn
+    }
 
     db.init_app(app)
 
