@@ -1,7 +1,11 @@
-import os
+import os, sys, requests, time
 from flask import Blueprint, redirect, render_template, request
 from flask_login import login_required,current_user
+
+from flask import Flask, render_template, url_for
+
 from application import app
+from werkzeug.utils import secure_filename
 
 views = Blueprint('views', __name__)
 imageData = [{"imageID":"1111","title":"something.jpg","description":"Something something","Created date":"30/08/2000"}]
@@ -44,7 +48,7 @@ def delete():
     return render_template('delete.html', delete = True, data = {"imageID":imageID, "title":title, "description":description})
 
 # Configure the upload folder
-UPLOAD_FOLDER = './uploads'
+UPLOAD_FOLDER = 'application/static/images'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 # Function to check if a file has an allowed extension
 def allowed_file(filename):
@@ -73,31 +77,44 @@ def upload():
 @views.route('/upload', methods=['POST'])
 @login_required
 def upload_file():
-    """
-    Uploads a file to the server.
-
-    Parameters:
-        None
-
-    Returns:
-        - If the file is successfully uploaded, returns a string "File uploaded successfully".
-        - If the file is invalid or the upload fails, returns a string "Invalid file format".
-    """
     if 'file' not in request.files:
         return redirect(request.url)
+
     file = request.files['file']
+
     if file.filename == '':
         return redirect(request.url)
-    if file and allowed_file(file.filename):
-        filename = file.filename
-        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        return 'File uploaded successfully'
-    return 'Invalid file format'
 
-    '''maybe the remove_bg.py can be added here'''
-    
-    """
-    Returns:
-        - If the file is successfully uploaded, returns the output result (image_w/o_bg).
-        - If the file is invalid or the upload fails, returns a string "Invalid file format".
-        """
+    if file and allowed_file(file.filename):
+        filename = secure_filename(file.filename)
+        file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+        file.save(file_path)
+        #print(file_path)
+        
+        file_path2 = 'application/static/images/'+filename
+        print(filename)
+        
+        new_fpath = None
+        '''
+        #remember to register the API key on the website
+        #one API key can only test 50 times, or will be charged the fee
+        response = requests.post(
+            'https://api.remove.bg/v1.0/removebg',
+            files={'image_file': open(file_path, 'rb')},
+            data={'size': 'auto'},
+            headers={'X-Api-Key': 'n2bbL2GRd5vmejYKyr8yLdC7'},
+        )
+        
+        if response.status_code == requests.codes.ok:
+            new_filename = os.path.splitext(filename)[0]
+            new_fpath = 'application/static/images/nobg_'+new_filename+'.png'
+            print(new_fpath)
+            with open(new_fpath, 'wb') as out:
+                out.write(response.content)
+            
+        else:
+            print("Error:", response.status_code, response.text)
+        '''    
+        return render_template('upload.html', image_url=filename)
+    else:
+        return "Invalid file format. Allowed formats are jpg, jpeg, png, and gif."
