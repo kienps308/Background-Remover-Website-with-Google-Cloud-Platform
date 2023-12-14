@@ -169,10 +169,26 @@ Click on your instance and go to the left-hand side of the page and click databa
  <img width="600" src="https://github.com/kienps308/ECS781P-Group7/blob/main/README/step5g.png"
 </p>
 
-Click on Create database 
+Click on Create database and name your database
+
+<br />
+<p align="center">
+ <img width="600" src="https://github.com/kienps308/ECS781P-Group7/blob/main/README/step5h1.png"
+</p>
+
+<br />
+<p align="center">
+ <img width="600" src="https://github.com/kienps308/ECS781P-Group7/blob/main/README/step5h2.png"
+</p>
 
 
-Created Database
+Created Database can be seen below 
+
+<br />
+<p align="center">
+ <img width="600" src="https://github.com/kienps308/ECS781P-Group7/blob/main/README/step5i.png"
+</p>
+
 
 
 
