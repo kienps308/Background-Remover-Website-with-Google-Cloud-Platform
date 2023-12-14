@@ -298,7 +298,7 @@ Let's integrate the request under the *upload_file* function in views.py
 
 <b>Step 10 — Run the application </b>
 <br /> 
-Ensure that you are in the flask_cloud_app directory and then run the project: 
+Ensure that you are in the ECS781P-Group7 directory and then run the project: 
 <br />
 (*Optional*: to activate the debugger for displaying application errors in the browser, set the FLASK_DEBUG environment variable to 1)
 
