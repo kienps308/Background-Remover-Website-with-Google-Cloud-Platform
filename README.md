@@ -129,20 +129,20 @@ Step 5a - Create a New project in the Google Cloud Platform
 Step 5b - Select SQL
 <br />
   <p align="center">
- <img width="600" src=" https://github.com/kienps308/ECS781P-Group7/blob/main/README/step5b.jpg "
+ <img width="600" src="README/step5b.jpg "
 </p>
 	  
 Step 5c -Create an instance for you SQL Database
 <br />
   <p align="center">
- <img width="600" src=" https://github.com/kienps308/ECS781P-Group7/blob/main/README/step5c.jpg "
+ <img width="600" src="README/step5c.jpg "
 </p>
 	
 Step 5c -Enable the Compute Engine API 
 <br />
 
   <p align="center">
- <img width="600" src=" https://github.com/kienps308/ECS781P-Group7/blob/main/README/step5d.jpg "
+ <img width="600" src="README/step5d.jpg "
 </p>
 	
 Step 5e - Create an instance based on your requirements 
@@ -151,14 +151,14 @@ Step 5e - Create an instance based on your requirements
 
 Your instance requirements will depend on the budget for your project.
 <p align="center">
-	<img width="600" src=" https://github.com/kienps308/ECS781P-Group7/blob/main/README/step5e.jpg"
+	<img width="600" src="README/step5e.jpg"
 </p>
 	
 Step 5f - My SQL instance has been created
 
 <br />
   <p align="center">
- <img width="600" src=" https://github.com/kienps308/ECS781P-Group7/blob/main/README/step5f.jpeg"
+ <img width="600" src="README/step5f.jpeg"
 </p>
 
 ----
@@ -220,7 +220,7 @@ Define the User model:
 
   <p align="center"> 
 
-  <img width="600" src=" https://github.com/kienps308/ECS781P-Group7/blob/main/README/step8.jpg "> 
+  <img width="600" src="README/step8.jpg "> 
 
 </p> 
 
