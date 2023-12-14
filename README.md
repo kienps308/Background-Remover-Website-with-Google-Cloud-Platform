@@ -182,7 +182,7 @@ Click on Create database and name your database
 </p>
 
 
-Created Database can be seen below 
+The created Database can be seen below 
 
 <br />
 <p align="center">
