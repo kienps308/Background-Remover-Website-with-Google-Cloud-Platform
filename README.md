@@ -45,7 +45,7 @@ cd temp_group_project
 You will want to create a Python environment if you don’t have one. 
 In this project, we will use miniconda: 
 <BR />
-[a link](https://docs.conda.io/projects/miniconda/en/latest/miniconda-install.html)
+[How to install Miniconda](https://docs.conda.io/projects/miniconda/en/latest/miniconda-install.html)
  
 Next, create and activate the environment:
 <BR />
@@ -117,47 +117,48 @@ The app will use these templates:
 	 
 ---
 <b>Step 5 — Creating the Database in the Google Cloud Platform </b>
-<br />
+<br/>
 
-Step 5a - Create a New project in the Google Cloud Platform </b>
+
+Step 5a - Create a New project in the Google Cloud Platform
+<br/>
+<p align="center">
+  <img width="600" src="README\step5a.png">
+</p>
+
+Step 5b - Select SQL
 <br />
 <p align="center">
-  <img width="600" src="https://github.com/kienps308/ECS781P-Group7/blob/main/README/step5a.png"	
-</p>
-
-Step 5b - Select SQL 
-<br />
-  <p align="center">
- <img width="300" src="https://github.com/kienps308/ECS781P-Group7/blob/main/README/step5b.png"
+  <img width="600" src="README\step5b.png "
 </p>
 	  
-Step 5c - Create an instance for you SQL Database 
+Step 5c -Create an instance for you SQL Database
 <br />
-  <p align="center">
- <img width = "600" src="https://github.com/kienps308/ECS781P-Group7/blob/main/README/step5c.png"
+<p align="center">
+  <img width="600" src="README\step5c.png "
 </p>
 	
-Step 5d - Enable the Compute Engine API  
+Step 5c -Enable the Compute Engine API 
 <br />
 
-  <p align="center">
- <img width="600" src="https://github.com/kienps308/ECS781P-Group7/blob/main/README/step5d.png"
+<p align="center">
+  <img width="600" src="README\step5d.png "
 </p>
 	
 Step 5e - Create an instance based on your requirements 
+
 <br />
 
 Your instance requirements will depend on the budget for your project.
-
-  <p align="center">
- <img width="600" src="https://github.com/kienps308/ECS781P-Group7/blob/main/README/step5e.png"
+<p align="center">
+  <img width="600" src="README\step5e.png"
 </p>
 	
- Step 5f -The My SQL instance has now been created
+Step 5f - My SQL instance has been created
 
- <br />
-  <p align="center">
- <img width="600" src="https://github.com/kienps308/ECS781P-Group7/blob/main/README/step5f.jpg"
+<br />
+<p align="center">
+  <img width="600" src="README\step5f.jpg"
 </p>
 
 
@@ -175,19 +176,19 @@ Click on Create database
 Created Database
 ----
 <b>Step 6 — Database Authentication</b>
-<br />
+<br/>
 To connect to your Google Cloud SQL's database, you need to set up your project. You will need to know your project ID and the name of your database. Execute these commands:
-
-- IAM principal (user, service account, etc.) with the Cloud SQL Client role.
+- Connect Your Google Cloud Project
 ```diff
-!gcloud config set project {project_id} 
+gcloud config set project {project_id} 
 ```
 
-- Enable the Cloud SQL Admin API within your project.
+- IAM principal (user, service account, etc.) with the Cloud SQL Client role.
 ```diff
 gcloud projects add-iam-policy-binding {project_id} --member=user:{current_user} --role="roles/cloudsql.client"
 ```
 
+- Enable the Cloud SQL Admin API within your project.
 ```diff
 gcloud services enable sqladmin.googleapis.com
 ```
@@ -202,6 +203,7 @@ gcloud sql instances create {instance_name} --database-version=MYSQL_8_0 --regio
 gcloud sql databases create {db_name} --instance={instance_name}
 ```
 
+- Create a Database User
 ```diff
 gcloud sql users create {username} --instance={instance_name} --password="xxxxxxxxxx"
 ```
@@ -231,7 +233,7 @@ Define the User model:
 
   <p align="center"> 
 
-  <img width="600" src=" https://github.com/kienps308/ECS781P-Group7/blob/main/README/step8.jpg "> 
+  <img width="600" src="README/step8.jpg "> 
 
 </p> 
 
