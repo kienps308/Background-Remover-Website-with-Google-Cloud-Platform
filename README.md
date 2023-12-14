@@ -114,11 +114,11 @@ The app will use these templates:
  - upload.html   
  <br />
 
-
- 	 
+	 
 ---
 <b>Step 5 — Creating the Database in the Google Cloud Platform </b>
 <br/>
+
 
 Step 5a - Create a New project in the Google Cloud Platform
 <br/>
@@ -161,6 +161,19 @@ Step 5f - My SQL instance has been created
   <img width="600" src="README\step5f.jpg"
 </p>
 
+
+Step 5g -Create the database in MySQL instance
+Click on your instance and go to the left-hand side of the page and click database 
+
+<br />
+ <p align="center">
+ <img width="600" src="https://github.com/kienps308/ECS781P-Group7/blob/main/README/step5g.png"
+</p>
+
+Click on Create database 
+
+
+Created Database
 ----
 <b>Step 6 — Database Authentication</b>
 <br/>
@@ -228,48 +241,78 @@ We have now established which attributes will be in our database.
 <br />
 
  
-<b>Step 9 — Setting Up the JavaScript for fetching data from Nasa APOD API </b>
+<b>Step 9 — Setting Up the external API - remove_bg API </b>
 <br />
-One of the most popular websites at NASA is the Astronomy Picture of the Day. In fact, this website is one of the most popular websites across all federal agencies. 
+The background removal functionality is served on the web application from remove.bg, it uses only one API call but an API key is required.
  
-HTTP Request :
+HTTP Request in cURL :
 ```diff
-GET https://api.nasa.gov/planetary/apod  
+$ curl -H 'X-API-Key: INSERT_YOUR_API_KEY_HERE'           \
+       -F 'image_file=@/path/to/file.jpg'                 \
+       -F 'size=auto'                                     \
+       -f https://api.remove.bg/v1.0/removebg -o no-bg.png
 ```
 
-concept_tags are now disabled in this service. Also, an optional return parameter copyright is returned if the image is not public domain. 
-<p align="center">
-  <img width="600" src="https://github.com/karanpardeshi11/Nasa/blob/main/ReadMe/step7.jpg">
-</p>
- 
-Example query :
+A request of the API call will be made if using python, note that the library "requests" is required to be installed. 
+
+Example query:
 ```diff
-https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY   
+response = requests.post(
+    'https://api.remove.bg/v1.0/removebg',
+    files={'image_file': open('/path/to/file.jpg', 'rb')},
+    data={'size': 'auto'},
+    headers={'X-Api-Key': 'INSERT_YOUR_API_KEY_HERE'},
+)
+if response.status_code == requests.codes.ok:
+    with open('no-bg.png', 'wb') as out:
+        out.write(response.content)
+else:
+    print("Error:", response.status_code, response.text) 
 ```
+Let's integrate the request under the *upload_file* function in views.py
+
 <p align="center">
-  <img width="600" src="https://github.com/karanpardeshi11/Nasa/blob/main/ReadMe/step7-1.jpg">
+  <img width="600" src="https://github.com/kienps308/ECS781P-Group7/blob/main/README/step7.jpg">
 </p>
  
 
 <b>Step 10 — Run the application </b>
-<br />
-The FLASK_DEBUG environment variable is enabled by setting it to 1. This will enable a debugger that will display application errors in the browser. 
 <br /> 
 Ensure that you are in the flask_cloud_app directory and then run the project: 
+<br />
+(*Optional*: to activate the debugger for displaying application errors in the browser, set the FLASK_DEBUG environment variable to 1)
+
 ```diff
 python3 main.py   
-```
+``` 
  
-           
- 
-Now, in a web browser, you can navigate to the five possible URLs and see the text returned that was defined in auth.py and views.py. 
+Now, in a web browser, you can navigate to the four possible URLs and see the content that was defined in auth.py and views.py. 
  
 For example, visiting localhost:5000/ displays: Home: 
  <p align="center">
-  <img width="600" src="https://github.com/karanpardeshi11/Nasa/blob/main/ReadMe/step8.jpg">
+  <img width="600" src="https://github.com/kienps308/ECS781P-Group7/blob/main/README/step8.jpg">
 </p> 
- 	 
 
+<b>Step 11 — Serving the application over https </b>
+<br />
+To apply the web app over https, we need a SSL Certificate Files including a ‘key’ file and a ‘cert’, which are the private key file and the certificate file respectively. 
+<br /> 
+If you don’t have an SSL Certificate, you can generate a self-signed certificate using OpenSSL, to generate a self-signed certificate valid for 10 years, and using the code : 
+```diff
+req -x509 -newkey rsa:4096 -nodes -out cert.pem -keyout key.pem -days 3650
+```
+
+<br /> 
+Then you would be required to input information such as the country name, state name, city name, organisation name, Unit name, common name and email address.
+
+<br/>
+After a ‘key’ and ‘cert’ file are generated, implement these files to enable HTTPS and a secure connection, you then need to include them in app.run in the main.py.
+<br />
+ 
+```diff
+app.run(debug=True, host='0.0.0.0', port = 5000, debug=True, ssl_context=('cert.pem', 'key.pem')) 
+```
+ <br />
 
 ----- 
 <b>Conclusion </b>
