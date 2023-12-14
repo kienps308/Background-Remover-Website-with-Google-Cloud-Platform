@@ -34,8 +34,6 @@ mkdir temp_group_project
 ```
 
 <br />
-
-
 Next, navigate to the project directory:
 <BR />
 ```diff
@@ -189,21 +187,6 @@ The created Database can be seen below
  <img width="600" src="https://github.com/kienps308/ECS781P-Group7/blob/main/README/step5i.jpeg"
 </p>
 
-<b>Step 7 — Initialize Database in Code </b> 
-<br />
-<p align="center">
- <img width="600" src="https://github.com/kienps308/ECS781P-Group7/blob/main/README/step7new.png"
-</p>
-
- 
-
-In the __init__.py file you need to initialize the parameters for both your MySQL instance and your database.  project_id, region and instance_name will depend on what you have chosen when you created your MySQL instance. DB_USER is name of the user that was created for the instance. DB_PASS is the password and DB_NAME is the name of the database.  
-
-
-
-
-
-----
 <b>Step 6 — Database Authentication</b>
 <br/>
 To connect to your Google Cloud SQL's database, you need to set up your project. You will need to know your project ID and the name of your database. Execute these commands:
@@ -238,11 +221,19 @@ gcloud sql users create {username} --instance={instance_name} --password="xxxxxx
 ```
 You will now see a database created in the Cloud SQL console. 
 
+<b>Step 7 — Initialize Database in Code </b> 
+<br />
+<p align="center">
+ <img width="600" src="https://github.com/kienps308/ECS781P-Group7/blob/main/README/step7new.png"
+</p>
+
+
+In the __init__.py file you need to initialize the parameters for both your MySQL instance and your database.  project_id, region and instance_name will depend on what you have chosen when you created your MySQL instance. DB_USER is name of the user that was created for the instance. DB_PASS is the password and DB_NAME is the name of the database.  
+
+
 <b>Step 8 — Creating User Models </b> 
 
 <br /> 
-
-  
 A user is represented by a User model. In Flask-SQLAlchemy models are defined using classes. In the figure below we have defined a class called User with the following attributes: id, email, username and password. Each of these attributes is converted to a column in our database. More attributes can be added to your application if this is required, for example data of birth or preferences.   
 
 <br /> 
@@ -262,7 +253,7 @@ Define the User model:
 
   <p align="center"> 
 
-  <img width="600" src="README/step8new.jpg "> 
+  <img width="600" src="README/step8new.PNG "> 
 
 </p> 
 
