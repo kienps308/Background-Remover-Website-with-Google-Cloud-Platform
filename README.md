@@ -118,49 +118,62 @@ The app will use these templates:
  	 
 ---
 <b>Step 5 — Creating the Database in the Google Cloud Platform </b>
-<br/>
+<br />
 
-Step 5a - Create a New project in the Google Cloud Platform
-<br/>
-<p align="center">
-  <img width="600" src="README\step5a.png">
-</p>
-
-Step 5b - Select SQL
+Step 5a - Create a New project in the Google Cloud Platform </b>
 <br />
 <p align="center">
-  <img width="600" src="README\step5b.png "
+  <img width="600" src="https://github.com/kienps308/ECS781P-Group7/blob/main/README/step5a.png"	
+</p>
+
+Step 5b - Select SQL 
+<br />
+  <p align="center">
+ <img width="300" src="https://github.com/kienps308/ECS781P-Group7/blob/main/README/step5b.png"
 </p>
 	  
-Step 5c -Create an instance for you SQL Database
+Step 5c - Create an instance for you SQL Database 
 <br />
-<p align="center">
-  <img width="600" src="README\step5c.png "
+  <p align="center">
+ <img width = "600" src="https://github.com/kienps308/ECS781P-Group7/blob/main/README/step5c.png"
 </p>
 	
-Step 5c -Enable the Compute Engine API 
+Step 5d - Enable the Compute Engine API  
 <br />
 
-<p align="center">
-  <img width="600" src="README\step5d.png "
+  <p align="center">
+ <img width="600" src="https://github.com/kienps308/ECS781P-Group7/blob/main/README/step5d.png"
 </p>
 	
 Step 5e - Create an instance based on your requirements 
-
 <br />
 
 Your instance requirements will depend on the budget for your project.
-<p align="center">
-  <img width="600" src="README\step5e.png"
+
+  <p align="center">
+ <img width="600" src="https://github.com/kienps308/ECS781P-Group7/blob/main/README/step5e.png"
 </p>
 	
-Step 5f - My SQL instance has been created
+ Step 5f -The My SQL instance has now been created
+
+ <br />
+  <p align="center">
+ <img width="600" src="https://github.com/kienps308/ECS781P-Group7/blob/main/README/step5f.jpg"
+</p>
+
+
+Step 5g -Create the database in MySQL instance
+Click on your instance and go to the left-hand side of the page and click database 
 
 <br />
 <p align="center">
-  <img width="600" src="README\step5f.jpg"
+ <img width="600" src="https://github.com/kienps308/ECS781P-Group7/blob/main/README/step5g.png"
 </p>
 
+Click on Create database 
+
+
+Created Database
 ----
 <b>Step 6 — Database Authentication</b>
 <br/>
