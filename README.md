@@ -118,31 +118,31 @@ The app will use these templates:
  	 
 ---
 <b>Step 5 — Creating the Database in the Google Cloud Platform </b>
-<br />
+<br/>
 
 Step 5a - Create a New project in the Google Cloud Platform
-<br />
+<br/>
 <p align="center">
-  <img width="600" src="README\step5a.jpg "	  
+  <img width="600" src="README\step5a.png">
 </p>
 
 Step 5b - Select SQL
 <br />
-  <p align="center">
- <img width="600" src="README\step5b.jpg "
+<p align="center">
+  <img width="600" src="README\step5b.png "
 </p>
 	  
 Step 5c -Create an instance for you SQL Database
 <br />
-  <p align="center">
- <img width="600" src="README\step5c.jpg "
+<p align="center">
+  <img width="600" src="README\step5c.png "
 </p>
 	
 Step 5c -Enable the Compute Engine API 
 <br />
 
-  <p align="center">
- <img width="600" src="README\step5d.jpg "
+<p align="center">
+  <img width="600" src="README\step5d.png "
 </p>
 	
 Step 5e - Create an instance based on your requirements 
@@ -151,19 +151,19 @@ Step 5e - Create an instance based on your requirements
 
 Your instance requirements will depend on the budget for your project.
 <p align="center">
-	<img width="600" src="README\step5e.jpg"
+  <img width="600" src="README\step5e.png"
 </p>
 	
 Step 5f - My SQL instance has been created
 
 <br />
-  <p align="center">
- <img width="600" src="README\step5f.jpeg"
+<p align="center">
+  <img width="600" src="README\step5f.jpg"
 </p>
 
 ----
 <b>Step 6 — Database Authentication</b>
-<br />
+<br/>
 To connect to your Google Cloud SQL's database, you need to set up your project. You will need to know your project ID and the name of your database. Execute these commands:
 - Connect Your Google Cloud Project
 ```diff
