@@ -45,7 +45,7 @@ cd temp_group_project
 You will want to create a Python environment if you don’t have one. 
 In this project, we will use miniconda: 
 <BR />
-[a link](https://docs.conda.io/projects/miniconda/en/latest/miniconda-install.html)
+[How to install Miniconda](https://docs.conda.io/projects/miniconda/en/latest/miniconda-install.html)
  
 Next, create and activate the environment:
 <BR />
@@ -169,7 +169,7 @@ To connect to your Google Cloud SQL's database, you need to set up your project.
 
 - IAM principal (user, service account, etc.) with the Cloud SQL Client role.
 ```diff
-!gcloud config set project {project_id} 
+gcloud config set project {project_id} 
 ```
 
 - Enable the Cloud SQL Admin API within your project.
