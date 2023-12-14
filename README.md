@@ -192,7 +192,7 @@ The created Database can be seen below
 <b>Step 7 — Initialize Database in Code </b> 
 <br />
 <p align="center">
- <img width="600" src="https://github.com/kienps308/ECS781P-Group7/blob/main/README/step7.jng"
+ <img width="600" src="https://github.com/kienps308/ECS781P-Group7/blob/main/README/step7.png"
 </p>
 
  
