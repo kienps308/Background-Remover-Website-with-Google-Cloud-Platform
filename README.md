@@ -120,33 +120,32 @@ The app will use these templates:
 <b>Step 5 — Creating the Database in the Google Cloud Platform </b>
 <br />
 
-<b>Create a New project in the Google Cloud Platform </b>
+Step 5a - Create a New project in the Google Cloud Platform
 <br />
 <p align="center">
   <img width="600" src="https://github.com/kienps308/ECS781P-Group7/blob/main/README/step5a.jpg "	  
 </p>
 
-<b>Select SQL </b>
+Step 5b - Select SQL
 <br />
   <p align="center">
  <img width="600" src=" https://github.com/kienps308/ECS781P-Group7/blob/main/README/step5b.jpg "
 </p>
 	  
-<b>Create an instance for you SQL Database  </b>
+Step 5c -Create an instance for you SQL Database
 <br />
   <p align="center">
  <img width="600" src=" https://github.com/kienps308/ECS781P-Group7/blob/main/README/step5c.jpg "
 </p>
 	
-<b>Enable the Compute Engine API  </b>
+Step 5c -Enable the Compute Engine API 
 <br />
 
   <p align="center">
  <img width="600" src=" https://github.com/kienps308/ECS781P-Group7/blob/main/README/step5d.jpg "
 </p>
 	
-<b>Create an instance based on your requirements 
- </b>
+Step 5e - Create an instance based on your requirements 
 
 <br />
 
@@ -155,8 +154,8 @@ Your instance requirements will depend on the budget for your project.
 	<img width="600" src=" https://github.com/kienps308/ECS781P-Group7/blob/main/README/step5e.jpg"
 </p>
 	
-<b> My SQL instance has been created
-</b>
+Step 5f - My SQL instance has been created
+
 <br />
   <p align="center">
  <img width="600" src=" https://github.com/kienps308/ECS781P-Group7/blob/main/README/step5f.jpeg"
