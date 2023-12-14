@@ -166,19 +166,19 @@ Click on your instance and go to the left-hand side of the page and click databa
 
 <br />
 <p align="center">
- <img width="600" src="https://github.com/kienps308/ECS781P-Group7/blob/main/README/step5g.png"
+ <img width="300" src="https://github.com/kienps308/ECS781P-Group7/blob/main/README/step5g.png"
 </p>
 
 Click on Create database and name your database
 
 <br />
 <p align="center">
- <img width="600" src="https://github.com/kienps308/ECS781P-Group7/blob/main/README/step5h1.png"
+ <img width="300" src="https://github.com/kienps308/ECS781P-Group7/blob/main/README/step5h1.png"
 </p>
 
 <br />
 <p align="center">
- <img width="600" src="https://github.com/kienps308/ECS781P-Group7/blob/main/README/step5h2.png"
+ <img width="600" src="https://github.com/kienps308/ECS781P-Group7/blob/main/README/step5h3.png"
 </p>
 
 
@@ -186,7 +186,7 @@ Created Database can be seen below
 
 <br />
 <p align="center">
- <img width="600" src="https://github.com/kienps308/ECS781P-Group7/blob/main/README/step5i.png"
+ <img width="600" src="https://github.com/kienps308/ECS781P-Group7/blob/main/README/step5i.jpeg"
 </p>
 
 
