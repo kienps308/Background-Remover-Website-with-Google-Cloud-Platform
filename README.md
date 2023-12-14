@@ -178,7 +178,7 @@ Click on Create database and name your database
 
 <br />
 <p align="center">
- <img width="600" src="https://github.com/kienps308/ECS781P-Group7/blob/main/README/step5h3.png"
+ <img width="600" src="https://github.com/kienps308/ECS781P-Group7/blob/main/README/step5h4.png"
 </p>
 
 
@@ -188,6 +188,16 @@ The created Database can be seen below
 <p align="center">
  <img width="600" src="https://github.com/kienps308/ECS781P-Group7/blob/main/README/step5i.jpeg"
 </p>
+
+<b>Step 7 — Initialize Database in Code </b> 
+<br />
+<p align="center">
+ <img width="600" src="https://github.com/kienps308/ECS781P-Group7/blob/main/README/step7.jng"
+</p>
+
+ 
+
+In the __init__.py file you need to initialize the parameters for both your MySQL instance and your database.  project_id, region and instance_name will depend on what you have chosen when you created your MySQL instance. DB_USER is name of the user that was created for the instance. DB_PASS is the password and DB_NAME is the name of the database.  
 
 
 
