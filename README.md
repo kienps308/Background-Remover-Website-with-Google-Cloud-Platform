@@ -309,7 +309,7 @@ Now, in a web browser, you can navigate to the four possible URLs and see the co
  
 For example, visiting localhost:5000/ displays: Home: 
  <p align="center">
-  <img width="600" src="https://github.com/kienps308/ECS781P-Group7/blob/main/README/step8.jpg">
+  <img width="600" src="https://github.com/kienps308/ECS781P-Group7/blob/main/README/image.png">
 </p> 
 
 <b>Step 11 — Serving the application over https </b>
