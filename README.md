@@ -166,17 +166,17 @@ Your instance requirements will depend on the budget for your project.
 <b>Step 6 — Database Authentication</b>
 <br />
 To connect to your Google Cloud SQL's database, you need to set up your project. You will need to know your project ID and the name of your database. Execute these commands:
-
-- IAM principal (user, service account, etc.) with the Cloud SQL Client role.
+- Connect Your Google Cloud Project
 ```diff
 gcloud config set project {project_id} 
 ```
 
-- Enable the Cloud SQL Admin API within your project.
+- IAM principal (user, service account, etc.) with the Cloud SQL Client role.
 ```diff
 gcloud projects add-iam-policy-binding {project_id} --member=user:{current_user} --role="roles/cloudsql.client"
 ```
 
+- Enable the Cloud SQL Admin API within your project.
 ```diff
 gcloud services enable sqladmin.googleapis.com
 ```
@@ -191,6 +191,7 @@ gcloud sql instances create {instance_name} --database-version=MYSQL_8_0 --regio
 gcloud sql databases create {db_name} --instance={instance_name}
 ```
 
+- Create a Database User
 ```diff
 gcloud sql users create {username} --instance={instance_name} --password="xxxxxxxxxx"
 ```
