@@ -262,7 +262,7 @@ Define the User model:
 
   <p align="center"> 
 
-  <img width="600" src="README/step8.jpg "> 
+  <img width="600" src="README/step8new.jpg "> 
 
 </p> 
 
