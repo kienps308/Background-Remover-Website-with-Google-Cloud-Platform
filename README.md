@@ -336,6 +336,8 @@ app.run(debug=True, host='0.0.0.0', port = 5000, debug=True, ssl_context=('cert.
 ----- 
 <b>Conclusion </b>
 <br />
-We built a login system for an app using Flask-Login and Flask-SQLAlchemy in this app. By initially constructing a user model and saving the user's information, we have demonstrated how to authenticate a user. Then we had to check that the user's password was correct by hashing it and comparing it to the one saved in the database. Finally, we introduced authorisation to the app by using the @login required decorator on a profile page to restrict access to only logged-in users. 
-<br />
-For simple apps, the code you wrote in this article will suffice, but if you want more functionality right away, you might consider using the Flask-User or Flask-Security libraries, which are both built on Flask. Finally, we have have demonstrated the use of Nasa APOD API to display picture of the day and randomly generated picture of data by passing a random date to the API. 
+We built a web application using Python Flask based on an external API from remove.bg, this application will be deployed on the Google Cloud platform. 
+
+In the app, a login system is created using Flask-Login and Flask-SQLAlchemy. We illustrated the process of authenticating a user by first creating a user model and storing their information. Subsequently, we verified the correctness of the user's password by hashing it and comparing it with the stored database entry. Lastly, we implemented app authorization by applying the @login_required decorator to a profile page, ensuring access is limited to authenticated users.
+
+Finally, we have demonstrated the use of remove.bg API to display the background removal functionality, and the code mentioned above will suffice for simple use (uploading an image and seeing the result). More functionalities can be added in the future, such as fulfilling the gallery part, which will allow users to review all the uploaded images.
